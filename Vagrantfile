@@ -1,25 +1,25 @@
 Vagrant.configure("2") do |config|
 
-  # Definindo nome, cpu e memória da VM
+  # Definir provider e alocar recursos
   config.vm.provider "virtualbox" do |v|
     v.name = "vagrant-shell-script"
     v.cpus = 1
-    v.memory = "1024"
+    v.memory = 1024
+    v.gui = false
   end
 
-  # Definindo o SO da VM
-  config.vm.box = "ubuntu/focal64"
+  # Definir SO da VM
+  config.vm.box = "ubuntu/jammy64"
 
-  # Configuração de rede
+  # Configurar rede
 
-  # Redirecionamento de portas
+  # Redirecionar portas
   config.vm.network "forwarded_port", guest: 80, host: 8080
 
-  # Rede pública com ip estático
-  # Altere o ip estático com um ip parecido com o da sua máquina física
-  config.vm.network "public_network", ip: "192.168.15.55"
+  # Rede privada com ip estático
+  config.vm.network "private_network", ip: "192.168.56.11"
 
   # Padronização da VM usando o shell
-  config.vm.provision "shell", path: "script.sh"
+  config.vm.provision "shell", path: "provision.sh"
 
 end
