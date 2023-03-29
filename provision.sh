@@ -7,7 +7,7 @@ usuario="miguel"
 sudo apt update
 
 # Instalando alguns pacotes de ferramentas para administrar o servidor
-sudo apt install -y "$ferramentas"
+sudo apt install -y $ferramentas
 
 # Definindo o nome da máquina
 sudo hostnamectl set-hostname webserver
