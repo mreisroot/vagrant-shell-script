@@ -1,5 +1,7 @@
 # Máquina Vagrant padronizada com o Shell
 
+## Introdução
+
 Neste projeto, uma máquina Ubuntu é criada no Vagrant e é provisionada usando um shell script.
 
 Após a criação da máquina, o Vagrant acionará o shell como provisionador após ler a linha
