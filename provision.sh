@@ -1,21 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
-ferramentas="vim curl telnet unzip wget net-tools htop nmap"
+# Lista de pacotes a serem instalados
+pacotes=(vim curl telnet unzip wget net-tools htop nmap)
+
+# Nome da máquina
+myhostname="lunar"
+
+# Nome do usuário a ser criado
 usuario="miguel"
 
-# Atualizar os repositórios do Ubuntu
+# Instalar pacotes
 sudo apt update
+sudo apt install -y "${pacotes[@]}"
 
-# Instalando alguns pacotes de ferramentas para administrar o servidor
-sudo apt install -y $ferramentas
+# Definir o nome da máquina
+sudo hostnamectl hostname ${myhostname}
 
-# Definindo o nome da máquina
-sudo hostnamectl set-hostname webserver
-
-# Criando um usuário
+# Criar um usuário
 # Coloquei o meu nome, mas você coloca o nome que quiser
-sudo useradd -m $usuario
-sudo printf "123Mudar\n123Mudar" | passwd $usuario
-
-# Instalando o servidor nginx
-sudo apt install -y nginx
+sudo useradd -m ${usuario}
+sudo echo -e "123Mudar\n123Mudar" | passwd ${usuario}
