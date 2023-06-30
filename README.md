@@ -1,6 +1,6 @@
 # Máquina Vagrant padronizada com o Shell
 
-Neste projeto, uma máquina Ubuntu é criada no Vagrant e é padronizada usando um shell script.
+Neste projeto, uma máquina Ubuntu é criada no Vagrant e é provisionada usando um shell script.
 
 Após a criação da máquina, o Vagrant acionará o shell como provisionador após ler a linha
 
@@ -11,13 +11,12 @@ Com isso, o shell executará os comandos contidos no arquivo provision.sh, que i
 * Instalar os pacotes vim, curl, telnet, unzip, wget, net-tools, htop e nmap
 * Definir o nome da máquina
 * Criar um usuário
-* Instalar o servidor web nginx
 
 ## Como utilizar este projeto
 
-Para acessar o servidor nginx, digite na barra de pesquisa do navegador:
+Para criar a VM, execute:
 
-`192.168.56.11`
+`vagrant up`
 
 Para acessar a VM, execute:
 
@@ -25,4 +24,4 @@ Para acessar a VM, execute:
 
 Para destruir a VM, execute:
 
-`vagrant destroy`
+`vagrant destroy -f`
