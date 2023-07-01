@@ -4,7 +4,7 @@
 pacotes=(vim curl telnet unzip wget net-tools htop nmap)
 
 # Nome da máquina
-myhostname="lunar"
+myhostname="jammy"
 
 # Nome do usuário a ser criado
 usuario="miguel"
