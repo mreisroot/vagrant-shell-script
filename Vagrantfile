@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Definir SO e redes
-  config.vm.box = "ubuntu/lunar64"
+  config.vm.box = "ubuntu/jammy64"
   config.vm.network "private_network", ip: "192.168.56.2"
 
   # Provisionar a máquina virtual por shell script
